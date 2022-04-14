@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <h1>URL</h1>
-        <form action="" method="Post" class="my-4 d-flex">
+        <form action="/shorten" method="POST" class="my-4 d-flex">
             <input class="form-control me-4 col" required placeholder="Ingresa la Url" type="url" name="fullUrl" id="fullUrl">
             <button class="btn btn-success" type="submit">Hora de acortar!</button>
         </form>
@@ -21,14 +21,19 @@
                 <th>Full Url</th>
                 <th>Short Url</th>
                 <th>Clicks</th> 
+                <th>Date</th> 
+
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td><a href="www.google.com">www.google.com</a></td>
-                    <td><a href="/12345">12345</a></td>
-                    <td>10</td>
-                </tr>
+                <% url.forEach(shortUrl => { %>
+                    <tr>
+                        <td><a href=<% shortUrl.longUrl %>><% shortUrl.longUrl %></a></td>
+                        <td><a href=<% shortUrl.short %>><% shortUrl.short %></a></td>
+                        <td><% shortUrl.clicks %></td>
+                        <td><% shortUrl.date %></td>
+                    </tr>
+                <%})%>
             </tbody>
         </table>
     </div>
