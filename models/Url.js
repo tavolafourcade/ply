@@ -1,23 +1,25 @@
 const mongoose = require('mongoose')
 const shortId = require('shortid')
 
-shortId.generate()
-
-const shortUrlSchema = mongoose.Schema({
-    full:{
+const urlSchema = new mongoose.Schema({
+    urlCode: String,
+    longUrl:{
         type: String,
         required: true
     },
-    short:{
+    shortUrl:{
         type: String,
         required: true,
         default: shortId.generate
     },
     clicks: {
         type: Number,
-        required: true,
         default: 0
+    },
+    date: {
+        type: String,
+        default: Date.now
     }
 })
 
-module.exports = mongoose.model('ShortUrl', shortUrlSchema)
+module.exports = mongoose.model('Url', urlSchema)
