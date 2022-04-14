@@ -10,28 +10,27 @@
 <body>
     <div class="container">
         <h1>URL</h1>
-    <form action="" method="Post">
-        <label for="fullUrl">Url</label>
-        <input type="url" name="fullUrl" id="fullUrl">
-        <button type="submit">Hora de acortar!</button>
-    </form>
+        <form action="" method="Post" class="my-4 d-flex">
+            <input class="form-control me-4 col" required placeholder="Ingresa la Url" type="url" name="fullUrl" id="fullUrl">
+            <button class="btn btn-success" type="submit">Hora de acortar!</button>
+        </form>
 
-    <table>
-        <thead>
-            <tr>
-               <th>Full Url</th>
-               <th>Short Url</th>
-               <th>Clicks</th> 
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><a href="www.google.com">www.google.com</a></td>
-                <td><a href="/12345">12345</a></td>
-                <td>10</td>
-            </tr>
-        </tbody>
-    </table>
+        <table>
+            <thead>
+                <tr>
+                <th>Full Url</th>
+                <th>Short Url</th>
+                <th>Clicks</th> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="www.google.com">www.google.com</a></td>
+                    <td><a href="/12345">12345</a></td>
+                    <td>10</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </body>
 </html>
